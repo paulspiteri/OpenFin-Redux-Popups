@@ -19,25 +19,44 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 
 const theme = createMuiTheme({
     overrides: {
-        MuiButton: { // Name of the component ⚛️ / style sheet
-            root: {
-                background: 'linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%)',
-                border: 0,
-                color: 'white',
-                height: '48px',
-                padding: '0 30px'
-            },
-            label: { // Name of the rule
-                color: 'white', // Some CSS
-            },
-        },
+        // MuiButton: { // Name of the component ⚛️ / style sheet
+        //     root: {
+        //         background: 'linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%)',
+        //         border: 0,
+        //         color: 'white',
+        //         height: '48px',
+        //         padding: '0 30px'
+        //     },
+        //     label: { // Name of the rule
+        //         color: 'white', // Some CSS
+        //     },
+        // },
     },
 });
 
 const StyledButton = styled(({ color, ...other }) => (
     <Button classes={{ label: 'label' }} {...other} />
 ))`
-  background: linear-gradient(180deg, #fe6b8b 30%, #ff8e53 90%);
+width: 100px;
+height: 39px;
+border-radius: 2px;
+background-color: #617b89;
+background-size: cover;
+font-family: Open Sans;
+font-size: 9px;
+text-transform: unset;
+color: #ffffff;
+font-weight: 700;
+text-decoration: none solid rgb(255, 255, 255);
+text-align: center;
+box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+:hover {
+background-color: #7996a6;
+font-weight: 600;
+box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+
+}
 
   & .label {
     color: ${props => props.color};
@@ -83,8 +102,7 @@ class App extends Component<AppProps> {
                         <Button onClick={() => this.openPopup('popup1')}>open window</Button>
                         <Button onClick={() => this.openPopup('popup2')}
                                 css={css`background: red;`}>open window 2</Button>
-                        <StyledButton onClick={this.changeState}
-                                      color="purple">Change State - {this.props.title}</StyledButton>
+                        <StyledButton onClick={this.changeState}>{this.props.title}</StyledButton>
                     </header>
                 </div>
             </MuiThemeProvider>
