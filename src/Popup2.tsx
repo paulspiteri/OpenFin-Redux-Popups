@@ -3,11 +3,11 @@ import './App.css';
 import { connect } from 'react-redux';
 import { AppState } from './AppState';
 
-interface AppProps {
+interface PopupProps {
     title: string;
 }
 
-export const Popup2: React.FunctionComponent<AppProps> = function Popup2(props) {
+export const Popup2: React.FunctionComponent<PopupProps> = function Popup2(props) {
     return (<div className="App">
         <div className="Popup2">{props.title}</div>
     </div>);
