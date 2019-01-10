@@ -1,8 +1,8 @@
 export class LogInActionTypes {
-  static Submit: 'LogIn/Submit' = 'LogIn/Submit';
-  static Succeeded: 'LogIn/Succeeded' = 'LogIn/Succeeded';
-  static Failed: 'LogIn/Failed' = 'LogIn/Failed';
-  static Error: 'LogIn/Error' = 'LogIn/Error';
+  public static Submit: "LogIn/Submit" = "LogIn/Submit";
+  public static Succeeded: "LogIn/Succeeded" = "LogIn/Succeeded";
+  public static Failed: "LogIn/Failed" = "LogIn/Failed";
+  public static Error: "LogIn/Error" = "LogIn/Error";
 }
 
 export interface LogInSubmitAction {
@@ -24,14 +24,17 @@ export interface LogInErrorAction {
   type: typeof LogInActionTypes.Error;
 }
 
-export const createSubmitLogin = (username: string, password: string): LogInSubmitAction => ({
+export const createSubmitLogin = (
+  username: string,
+  password: string
+): LogInSubmitAction => ({
   type: LogInActionTypes.Submit,
   username,
   password
 });
 
 export const createLoginSucceeded = (): LogInSucceededAction => ({
-  type: LogInActionTypes.Succeeded,
+  type: LogInActionTypes.Succeeded
 });
 
 export const createLoginFailed = (error: string): LogInFailedAction => ({
@@ -40,7 +43,11 @@ export const createLoginFailed = (error: string): LogInFailedAction => ({
 });
 
 export const createLoginError = (): LogInErrorAction => ({
-  type: LogInActionTypes.Error,
+  type: LogInActionTypes.Error
 });
 
-export type LogInAction = LogInSubmitAction | LogInSucceededAction | LogInFailedAction | LogInErrorAction;
+export type LogInAction =
+  | LogInSubmitAction
+  | LogInSucceededAction
+  | LogInFailedAction
+  | LogInErrorAction;

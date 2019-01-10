@@ -1,15 +1,15 @@
 export class LogInStatus {
-  static NotLoggedIn: 'NotLoggedIn' = 'NotLoggedIn';
-  static LoggedIn: 'LoggedIn' = 'LoggedIn';
-  static LoggingIn: 'LoggingIn' = 'LoggingIn';
-  static FailedToLogIn: 'FailedToLogIn' = 'FailedToLogIn';
-  static ErrorLoggingIn: 'ErrorLoggingIn' = 'ErrorLoggingIn';
+  public static NotLoggedIn: "NotLoggedIn" = "NotLoggedIn";
+  public static LoggedIn: "LoggedIn" = "LoggedIn";
+  public static LoggingIn: "LoggingIn" = "LoggingIn";
+  public static FailedToLogIn: "FailedToLogIn" = "FailedToLogIn";
+  public static ErrorLoggingIn: "ErrorLoggingIn" = "ErrorLoggingIn";
 }
 
 export class UserRole {
-  static SALES: "sales" = 'sales';
-  static TRADER: "trader" = 'trader';
-  static SALESTRADER: "salestrader" = 'salestrader';
+  public static SALES: "sales" = "sales";
+  public static TRADER: "trader" = "trader";
+  public static SALESTRADER: "salestrader" = "salestrader";
 }
 
 export interface NotLoggedIn {
@@ -33,4 +33,9 @@ export interface ErrorLoggingIn {
   status: typeof LogInStatus.ErrorLoggingIn;
 }
 
-export type LogInState = NotLoggedIn | LoggedIn | LoggingIn | FailedToLogIn | ErrorLoggingIn;
+export type LogInState =
+  | NotLoggedIn
+  | LoggedIn
+  | LoggingIn
+  | FailedToLogIn
+  | ErrorLoggingIn;

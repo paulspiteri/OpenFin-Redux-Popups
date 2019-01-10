@@ -1,6 +1,5 @@
-import { LogInState } from './LogInState';
+import { LogInState } from "./LogInState";
 
 export interface AppState {
-    readonly login: LogInState;
+  readonly login: LogInState;
 }
-

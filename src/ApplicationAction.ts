@@ -1,4 +1,4 @@
-import { LogInAction } from './LogInActions';
+import { LogInAction } from "./LogInActions";
 
 type ApplicationAction = LogInAction;
 
