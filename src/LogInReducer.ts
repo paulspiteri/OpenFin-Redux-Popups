@@ -1,4 +1,4 @@
-import ApplicationAction from "./ApplicationAction";
+import AppAction from "./AppAction";
 import { LogInActionTypes } from "./LogInActions";
 import { LogInState, LogInStatus } from "./LogInState";
 
@@ -8,7 +8,7 @@ const initialState = {
 
 export default function(
   state: LogInState = initialState,
-  action: ApplicationAction
+  action: AppAction
 ): LogInState {
   switch (action.type) {
     case LogInActionTypes.Submit:

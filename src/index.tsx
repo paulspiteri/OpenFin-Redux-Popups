@@ -8,6 +8,7 @@ import LogInReducer from "./LogInReducer";
 import { getOpenFinWindowOptions } from "./OpenFinHelpers";
 import { Popup1Container } from "./Popup1";
 import { Popup2Container } from "./Popup2";
+import AppAction from "./AppAction";
 
 window.init = async (store: Store<any, any>) => {
   window.reduxStore = store;
@@ -26,11 +27,14 @@ window.init = async (store: Store<any, any>) => {
   );
 };
 
+const appReducer = combineReducers({ login: LogInReducer });
+type AppState = ReturnType<typeof appReducer>
+
 const start = async function() {
   const windowOptions = await getOpenFinWindowOptions();
   if (!windowOptions || !windowOptions.customData) {
     console.log("creating new store");
-    const store = createStore(combineReducers({ login: LogInReducer }));
+    const store = createStore<AppState, AppAction, undefined, undefined>(combineReducers({ login: LogInReducer }));
     window.init(store);
   }
 };

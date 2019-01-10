@@ -2,13 +2,13 @@ import "styled-components/macro";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import "./App.css";
-import ApplicationAction from "./ApplicationAction";
 import { AppState } from "./AppState";
 import { createLoginSucceeded } from "./LogInActions";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
+import AppAction from "./AppAction";
 
 const theme = createMuiTheme({
   overrides: {
@@ -118,7 +118,7 @@ function mapState(state: AppState) {
   };
 }
 
-function mapDispatch(dispatch: Dispatch<ApplicationAction>) {
+function mapDispatch(dispatch: Dispatch<AppAction>) {
   return {
     doLogin: () => dispatch(createLoginSucceeded())
   };
