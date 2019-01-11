@@ -1,8 +1,8 @@
-export class LogInActionTypes {
-  public static Submit: "LogIn/Submit" = "LogIn/Submit";
-  public static Succeeded: "LogIn/Succeeded" = "LogIn/Succeeded";
-  public static Failed: "LogIn/Failed" = "LogIn/Failed";
-  public static Error: "LogIn/Error" = "LogIn/Error";
+export enum LogInActionTypes {
+  Submit = "LogIn/Submit",
+  Succeeded = "LogIn/Succeeded",
+  Failed = "LogIn/Failed",
+  Error = "LogIn/Error"
 }
 
 export interface LogInSubmitAction {

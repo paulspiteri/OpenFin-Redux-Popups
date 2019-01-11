@@ -12,7 +12,9 @@ export default function(
 ): LogInState {
   switch (action.type) {
     case LogInActionTypes.Submit:
-      return { status: LogInStatus.LoggingIn };
+      return {
+        status: LogInStatus.LoggingIn
+      };
 
     case LogInActionTypes.Succeeded:
       return {
@@ -21,8 +23,7 @@ export default function(
 
     case LogInActionTypes.Failed:
       return {
-        status: LogInStatus.FailedToLogIn,
-        error: action.error ? action.error : "Login Failed."
+        status: LogInStatus.FailedToLogIn
       };
 
     case LogInActionTypes.Error:
